@@ -1,0 +1,28 @@
+{
+    "update_url": "https://clients2.google.com/service/update2/crx",
+    "manifest_version": 2,
+    "name": "Hide Ads for Facebook",
+    "version": "1.8.3",
+    "description": "Hide all ads on facebook™",
+    "icons": {
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "author": "MinhPhung",
+    "homepage_url": "https://github.com/tiratatp/facebook_adblock",
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.facebook.com/*",
+                "*://*.facebookcorewwwi.onion/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+}
